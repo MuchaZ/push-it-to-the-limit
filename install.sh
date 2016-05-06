@@ -21,6 +21,7 @@ cat > $PRE_PUSH <<EOL
 #!/bin/bash
 
 clear
+printf '\e[8;30;100t'
 aplay -q "$DIR/push-it-to-the-limit.wav" &	
 
 sleep 1.8s 
