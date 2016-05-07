@@ -10,7 +10,7 @@ PRE_PUSH=$TARGET_REPO/.git/hooks/pre-push
 
 if which aplay >/dev/null; then
     PLAYER=aplay
-elif which aflay >/dev/null; then
+elif which afplay >/dev/null; then
     PLAYER=afplay
 else
     echo "Could not find alsa-utils (Linux) or afplay (OSX)"
@@ -22,7 +22,16 @@ cat > $PRE_PUSH <<EOL
 
 clear
 printf '\e[8;30;100t'
-aplay -q "$DIR/push-it-to-the-limit.wav" &	
+
+if [ $PLAYER = "aplay" ]
+then
+	aplay -q "$DIR/push-it-to-the-limit.wav" &	
+elif [ $PLAYER = "afplay" ]
+then
+	afplay "$DIR/push-it-to-the-limit.wav" &	
+else
+	echo „Error! Couldn’t run player!”
+fi
 
 sleep 1.8s 
 cat "$DIR/push.txt"
