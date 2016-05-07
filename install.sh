@@ -34,19 +34,19 @@ else
 fi
 
 sleep 1.8s 
-cat "$DIR/push.txt"
+cat "$DIR/lyrics/push.txt"
 sleep 0.1s 
 clear
-cat "$DIR/it.txt"
+cat "$DIR/lyrics/it.txt"
 sleep 0.15s 
 clear
-cat "$DIR/to.txt"
+cat "$DIR/lyrics/to.txt"
 sleep 0.15s 
 clear
-cat "$DIR/the.txt"
+cat "$DIR/lyrics/the.txt"
 sleep 0.25s 
 clear
-cat "$DIR/limit.txt"
+cat "$DIR/lyrics/limit.txt"
 
 EOL
 chmod +x $PRE_PUSH
